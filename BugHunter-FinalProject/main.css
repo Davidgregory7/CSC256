@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    margin: 0;
+    padding: 40px;
+}
+
+.student-info {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}

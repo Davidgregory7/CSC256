@@ -1,0 +1,664 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bug Hunter | Debugging Challenge Lab</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="main-header">
+
+        <div class="logo">
+            <h1>🐞 Bug Hunter</h1>
+            <p>Debug. Learn. Level Up.</p>
+        </div>
+
+        <div class="player-stats">
+
+            <div class="stat-box">
+                <span>Level</span>
+                <strong id="levelDisplay">1</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>XP</span>
+                <strong id="xpDisplay">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>Streak</span>
+                <strong id="streakDisplay">0</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <nav class="navbar">
+
+        <a href="#home">Home</a>
+        <a href="#categories">Challenges</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#progress">Progress</a>
+
+    </nav>
+
+
+    <main>
+
+        <!-- =========================
+             HERO / HOME
+        ========================== -->
+        <section id="home" class="hero">
+
+            <div class="hero-text">
+
+                <p class="section-label">
+                    JavaScript Debugging Game
+                </p>
+
+                <h2>Can You Hunt Down the Bug?</h2>
+
+                <p>
+                    Put your JavaScript debugging skills to the test.
+                    Find broken code, identify programming mistakes,
+                    repair bugs, earn XP, and build your debugging streak.
+                </p>
+
+                <button id="startButton" class="main-button">
+                    Start Hunting Bugs
+                </button>
+
+            </div>
+
+
+            <div class="code-preview">
+
+                <div class="code-header">
+                    mysteryBug.js
+                </div>
+
+                <pre><code>function calculateScore(points) {
+    let total = points * 2;
+
+    console.log(totl);
+}
+
+calculateScore(10);</code></pre>
+
+                <p class="bug-message">
+                    🐞 There's a bug hiding in this code...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DIFFICULTY
+        ========================== -->
+        <section class="difficulty-section">
+
+            <p class="section-label">Choose Your Skill Level</p>
+
+            <h2>Select Difficulty</h2>
+
+            <div class="difficulty-buttons">
+
+                <button
+                    class="difficulty-button active"
+                    data-difficulty="easy">
+                    Easy
+                </button>
+
+                <button
+                    class="difficulty-button"
+                    data-difficulty="medium">
+                    Medium
+                </button>
+
+                <button
+                    class="difficulty-button"
+                    data-difficulty="hard">
+                    Hard
+                </button>
+
+            </div>
+
+            <p>
+                Current Difficulty:
+                <strong id="selectedDifficulty">Easy</strong>
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CHALLENGE CATEGORIES
+        ========================== -->
+        <section id="categories" class="categories-section">
+
+            <div class="section-title">
+
+                <p class="section-label">
+                    Choose Your Mission
+                </p>
+
+                <h2>Debugging Categories</h2>
+
+                <p>
+                    Select the type of JavaScript bugs you want
+                    to hunt.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <!-- Syntax -->
+                <article
+                    class="category-card"
+                    data-category="syntax">
+
+                    <div class="category-icon">⚠️</div>
+
+                    <h3>Syntax Errors</h3>
+
+                    <p>
+                        Find missing brackets, punctuation errors,
+                        incorrect keywords, and malformed code.
+                    </p>
+
+                    <button class="category-button">
+                        Select Mission
+                    </button>
+
+                </article>
+
+
+                <!-- Variables -->
+                <article
+                    class="category-card"
+                    data-category="variables">
+
+                    <div class="category-icon">📦</div>
+
+                    <h3>Variables</h3>
+
+                    <p>
+                        Debug variable names, values, declarations,
+                        scope, let, and const.
+                    </p>
+
+                    <button class="category-button">
+                        Select Mission
+                    </button>
+
+                </article>
+
+
+                <!-- Functions -->
+                <article
+                    class="category-card"
+                    data-category="functions">
+
+                    <div class="category-icon">⚙️</div>
+
+                    <h3>Functions</h3>
+
+                    <p>
+                        Repair broken parameters, return values,
+                        function calls, and function logic.
+                    </p>
+
+                    <button class="category-button">
+                        Select Mission
+                    </button>
+
+                </article>
+
+
+                <!-- Arrays -->
+                <article
+                    class="category-card"
+                    data-category="arrays">
+
+                    <div class="category-icon">🗂️</div>
+
+                    <h3>Arrays</h3>
+
+                    <p>
+                        Fix array indexes, loops, methods,
+                        and data manipulation problems.
+                    </p>
+
+                    <button class="category-button">
+                        Select Mission
+                    </button>
+
+                </article>
+
+
+                <!-- Objects -->
+                <article
+                    class="category-card"
+                    data-category="objects">
+
+                    <div class="category-icon">🧩</div>
+
+                    <h3>Objects</h3>
+
+                    <p>
+                        Debug object properties, methods,
+                        values, and references.
+                    </p>
+
+                    <button class="category-button">
+                        Select Mission
+                    </button>
+
+                </article>
+
+
+                <!-- DOM -->
+                <article
+                    class="category-card"
+                    data-category="dom">
+
+                    <div class="category-icon">🌐</div>
+
+                    <h3>DOM Bugs</h3>
+
+                    <p>
+                        Find problems involving HTML elements,
+                        buttons, events, and page interactions.
+                    </p>
+
+                    <button class="category-button">
+                        Select Mission
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CURRENT MISSION
+        ========================== -->
+        <section class="mission-section">
+
+            <p class="section-label">Mission Control</p>
+
+            <h2>Your Mission</h2>
+
+            <div class="mission-card">
+
+                <div>
+                    <span>Category</span>
+                    <strong id="selectedCategory">
+                        None Selected
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Difficulty</span>
+                    <strong id="missionDifficulty">
+                        Easy
+                    </strong>
+                </div>
+
+                <button
+                    id="missionButton"
+                    class="main-button"
+                    disabled>
+
+                    Begin Mission
+
+                </button>
+
+            </div>
+
+        </section>
+
+<!-- =========================
+     ACTIVE CHALLENGE
+========================== -->
+<section id="challengeArea" class="challenge-section hidden">
+
+    <div class="section-title">
+        <p class="section-label">Active Mission</p>
+        <h2 id="challengeTitle">Bug Challenge</h2>
+        <p>
+            Inspect the code and choose the correct answer.
+        </p>
+    </div>
+
+    <div class="challenge-container">
+
+        <div class="challenge-info">
+<div class="mission-status">
+    <span>
+        Completed:
+        <strong id="missionCompleted">0</strong>
+    </span>
+
+    <span>
+        Available:
+        <strong id="missionAvailable">0</strong>
+    </span>
+</div>
+            <span id="challengeCategory">
+                Category
+            </span>
+
+            <span id="challengeDifficulty">
+                Difficulty
+            </span>
+
+            <span>
+                XP Reward:
+                <strong id="challengeXP">0</strong>
+            </span>
+
+        </div>
+
+        <div class="challenge-code">
+
+            <div class="code-header">
+                bugChallenge.js
+            </div>
+
+            <pre><code id="challengeCode"></code></pre>
+
+        </div>
+
+        <h3 id="challengeQuestion">
+            What is wrong with this code?
+        </h3>
+
+        <div
+            id="answerContainer"
+            class="answer-container">
+        </div>
+
+        <button
+            id="submitAnswer"
+            class="main-button"
+            disabled>
+
+            Check Answer
+
+        </button>
+
+        <div
+            id="feedbackBox"
+            class="feedback-box hidden">
+
+            <h3 id="feedbackTitle"></h3>
+
+            <p id="feedbackText"></p>
+
+            <button
+                id="nextChallenge"
+                class="main-button">
+
+                Next Challenge
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+        <section id="how-it-works" class="how-section">
+
+            <div class="section-title">
+
+                <p class="section-label">
+                    Hunter Training
+                </p>
+
+                <h2>How Bug Hunter Works</h2>
+
+            </div>
+
+
+            <div class="steps-grid">
+
+                <article class="step">
+
+                    <span>1</span>
+
+                    <h3>Inspect</h3>
+
+                    <p>
+                        Carefully examine the broken
+                        JavaScript code.
+                    </p>
+
+                </article>
+
+
+                <article class="step">
+
+                    <span>2</span>
+
+                    <h3>Identify</h3>
+
+                    <p>
+                        Determine what is causing
+                        the program to fail.
+                    </p>
+
+                </article>
+
+
+                <article class="step">
+
+                    <span>3</span>
+
+                    <h3>Repair</h3>
+
+                    <p>
+                        Choose or enter the correct
+                        solution to the bug.
+                    </p>
+
+                </article>
+
+
+                <article class="step">
+
+                    <span>4</span>
+
+                    <h3>Level Up</h3>
+
+                    <p>
+                        Earn XP, increase your streak,
+                        and tackle harder bugs.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESS
+        ========================== -->
+        <section id="progress" class="progress-section">
+
+            <div class="section-title">
+
+                <p class="section-label">
+                    Hunter Statistics
+                </p>
+
+                <h2>Your Progress</h2>
+
+            </div>
+
+
+            <div class="progress-grid">
+                <div class="achievements-section">
+
+    <h3>Achievements</h3>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card locked" id="badgeFirstFix">
+            <span>🐞</span>
+            <h4>First Fix</h4>
+            <p>Fix your first bug.</p>
+        </div>
+
+        <div class="achievement-card locked" id="badgeBugCrusher">
+            <span>🔨</span>
+            <h4>Bug Crusher</h4>
+            <p>Fix 5 bugs.</p>
+        </div>
+
+        <div class="achievement-card locked" id="badgeHotStreak">
+            <span>🔥</span>
+            <h4>Hot Streak</h4>
+            <p>Reach a streak of 3.</p>
+        </div>
+
+        <div class="achievement-card locked" id="badgeXPHunter">
+            <span>⭐</span>
+            <h4>XP Hunter</h4>
+            <p>Earn 100 XP.</p>
+        </div>
+
+    </div>
+
+</div>
+<button id="resetProgress" class="reset-button">
+    Reset Progress
+</button>
+                <div class="progress-card">
+
+                    <h3>Total XP</h3>
+
+                    <p id="progressXP">0</p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <h3>Best Streak</h3>
+
+                    <p id="bestStreak">0</p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <h3>Bugs Fixed</h3>
+
+                    <p id="bugsFixed">0</p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <h3>Accuracy</h3>
+
+                    <p id="accuracy">0%</p>
+
+                </div>
+<div class="progress-card">
+    <h3>Challenges Completed</h3>
+    <p id="completedCount">0 / 54</p>
+</div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <h3>🐞 Bug Hunter</h3>
+
+        <p>
+            Debug. Learn. Level Up.
+        </p>
+
+        <p>
+            JavaScript Debugging Challenge Lab
+        </p>
+
+        <p>
+            &copy; 2026 Bug Hunter
+        </p>
+
+    </footer>
+
+
+    <!-- External JavaScript -->
+    <script src="js/challenges.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="student-info">
+        <h1>Student Information</h1>
+
+        <p><strong>Name:</strong> <span id="studentName"></span></p>
+        <p><strong>Major:</strong> <span id="studentMajor"></span></p>
+        <p><strong>UAT Email:</strong> <span id="studentEmail"></span></p>
+        <p><strong>Expected Graduation:</strong> <span id="graduationDate"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+>>>>>>> 9f8bd0a87784d21c6e46eb5d1d48e8e7047b0a8a
+</html>

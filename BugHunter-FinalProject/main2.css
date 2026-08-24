@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    color: darkblue;
+}
+
+input {
+    padding: 8px;
+    width: 250px;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#movieList {
+    background-color: white;
+    width: 350px;
+    min-height: 100px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.movie {
+    margin: 8px;
+}
